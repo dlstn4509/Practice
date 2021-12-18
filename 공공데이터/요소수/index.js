@@ -9,12 +9,11 @@ axios
     $('.lists').empty();
     let html = '';
     for (let i = 0; i < r.data.data.length; i++) {
-      html = '<li class="list">';
-      html += `<div>${r.data.data[i].name}</div>`;
-      html += '</li>';
+      html += `<tr>`;
+      html += `<td>${r.data.data[i].name}</td>`;
+      html += `<td>${r.data.data[i].addr}</td>`;
+      html += '</tr>';
+      document.querySelector('.lists').innerHTML = html;
     }
-    r.data.data.forEach((v, i) => {
-      console.log(v.name);
-    });
-    document.querySelector('.lists').innerHTML = html;
+    console.log(html);
   });
