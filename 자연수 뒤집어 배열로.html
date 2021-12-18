@@ -1,0 +1,11 @@
+<script>
+  function solution(n) {
+    var answer = [];
+    let arr = n.toString().split('');
+    for (let i = 0; i < arr.length; i++) {
+      answer.push(Number(arr[i]));
+    }
+    return answer.sort((a, b) => b - a);
+  }
+  console.log(solution(12345));
+</script>

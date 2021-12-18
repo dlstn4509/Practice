@@ -1,0 +1,13 @@
+<script>
+  function solution(s) {
+    let answer = true;
+    let text = s.toLowerCase() ? s.toLowerCase() : '';
+    if (text.match(/p/g).length !== text.match(/y/g).length) {
+      answer = false;
+    } else {
+      answer = true;
+    }
+    return answer;
+  }
+  console.log(solution('ooo'));
+</script>

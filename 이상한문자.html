@@ -1,0 +1,20 @@
+<script>
+  function solution(s) {
+    var answer = '';
+    let arr = String(s).split('');
+    let newArr = [];
+    console.log(arr);
+    for (let i = 0; i < s.length; i++) {
+      if (i % 2 === 0) {
+        newArr.push(s[i].toUpperCase());
+      }
+      if (i % 2 !== 1) {
+        newArr.push(s[i].toLowerCase());
+      }
+    }
+    answer = newArr.join();
+    return answer;
+  }
+
+  console.log(solution('try hello world'));
+</script>

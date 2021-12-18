@@ -1,0 +1,9 @@
+<script>
+  function solution(phone_number) {
+    var answer = '';
+    answer = '*'.repeat(phone_number.length - 4) + phone_number.substr(-4, 4);
+    return answer;
+  }
+  console.log(solution('01033334444'));
+  console.log(solution('027778888'));
+</script>

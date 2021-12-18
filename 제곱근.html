@@ -1,0 +1,13 @@
+<script>
+  function solution(n) {
+    var answer = 0;
+    if (String(Math.sqrt(n)).includes('.')) {
+      answer = -1;
+    } else {
+      answer = (Math.sqrt(n) + 1) * (Math.sqrt(n) + 1);
+    }
+    return answer;
+  }
+  console.log(solution(121));
+  console.log(solution(3));
+</script>

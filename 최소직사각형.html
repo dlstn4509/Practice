@@ -1,0 +1,23 @@
+<script>
+  function solution(sizes) {
+    var answer = 0;
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < sizes.length; i++) {
+      for (let j = 0; j < sizes.length; j++) {
+        arr1.push(sizes[i][j]);
+        // console.log(sizes[i][j]);
+      }
+    }
+    console.log(arr1);
+    return answer;
+  }
+  console.log(
+    solution([
+      [60, 50],
+      [30, 70],
+      [60, 30],
+      [80, 40],
+    ])
+  );
+</script>
