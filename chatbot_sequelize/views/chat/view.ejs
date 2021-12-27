@@ -1,0 +1,28 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<div class="view-wrapper wrapper mt-5">
+  <div class="view-wrap">
+    <form action="/chat/view" method="POST" name="viewForm">
+      <input type="hidden" name="id" value="<%= list.id %>">
+      <table class="table">
+        <tr>
+          <td>아이디</td>
+          <td><input type="text" value="<%= list.User.userid %>" readonly></td>
+        </tr>
+        <tr>
+          <td>작성자</td>
+          <td><input type="text" name="writer" value="<%= list.writer %>"></td>
+        </tr>
+        <tr>
+          <td>내용</td>
+          <td><input type="text" name="content" value="<%= list.content %>"></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button class="btn btn-success">수정</button>
+        <button type="button" class="btn btn-danger" onclick="history.go(-1)">뒤로가기</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../inc/foot.ejs') %> 

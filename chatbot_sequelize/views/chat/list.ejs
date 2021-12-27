@@ -1,0 +1,33 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %> 
+<script src="/js/promise.polyfill.min.js"></script> 
+<script src="/js/axios.min.js"></script> 
+<div class="chat-wrapper wrapper">
+  <table class="table">
+    <thead>
+      <tr>
+        <td>글번호</td>
+        <td>아이디</td>
+        <td>닉네임</td>
+        <td colspan="2">내용</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let list of lists) { %>
+        <tr class="chat-left">
+          <td><%= list.id %></td>
+          <td><%= list.User.userid %></td>
+          <td><%= list.writer %></td>
+          <td class="content" data-id="<%= list.id %>" style="cursor: pointer;"><%= list.content %></td>
+          <% if(user && user.userid === list.User.userid) { %>
+            <td>
+              <button class="btn btn-danger btDelete" data-id="<%= list.id %>">삭제</button>
+            </td>
+          <% } %>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<%- include('../inc/pager.ejs', pager) %> 
+<%- include('../inc/foot.ejs') %> 

@@ -1,0 +1,27 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %> 
+<div class="auth-wrapper mt-5">
+  <div class="auth-wrap wrapper">
+    <form action="/chat/auth" method="POST" name="authForm">
+      <table class="table">
+        <tr>
+          <td>아이디</td>
+          <td><input type="text" name="userid" required></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td><input type="password" name="userpw"></td>
+        </tr>
+        <tr>
+          <td>이름</td>
+          <td><input type="text" name="username"></td>
+        </tr>
+      </table>
+      <div class="text-center">
+        <button class="btn btn-primary">저장</button>
+        <button type="reset" class="btn btn-danger">수정</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../inc/foot.ejs') %> 

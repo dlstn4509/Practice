@@ -1,0 +1,38 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<div class="form-wrapper wrapper mt-5">
+  <div class="form-wrap">
+    <form action="/chat/form" method="POST" name="formForm" enctype="multipart/form-data">
+      <input type="hidden" name="user_id" value="<%= user.id %>">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>아이디</td>
+            <td><input type="text" value="dlstn4509" readonly></td>
+          </tr>
+          <tr>
+            <td>닉네임</td>
+            <td><input type="text" name="writer"></td>
+          </tr>
+          <tr>
+            <td>내용</td>
+            <td><input type="text" name="content"></td>
+          </tr>
+          <tr>
+            <td>첨부파일</td>
+            <td><input type="file" name="file" required></td>
+          </tr>
+          <tr>
+            <td>첨부파일2</td>
+            <td><input type="file" name="file2" required></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <button class="btn btn-primary" id="btSave">저장</button>
+        <button type="reset" class="btn btn-danger">초기화</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('../inc/foot.ejs') %> 

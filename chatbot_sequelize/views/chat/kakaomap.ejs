@@ -1,0 +1,14 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<script src="/js/axios.min.js"></script> 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1a1e9a216c68ddc95311f81f5191d54d&libraries=services,clusterer,drawing"></script>
+<div class="kakaomap-wrapper wrapper mt-5">
+  <div class="kakaomap-wrap">
+    <table class="table">
+      <input type="text" name="address" id="address" placeholder="주소입력">
+      <button class="btn btn-primary ml-5">조회</button>
+    </table>
+    <div id="map" style="width:1000px;height:600px;"></div>
+  </div>
+</div>
+<%- include('../inc/foot.ejs') %> 

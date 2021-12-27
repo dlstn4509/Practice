@@ -1,0 +1,49 @@
+@import './common';
+
+.header-wrapper {
+  background-color: #f0f3f7;
+  width: 100vw;
+  height: 40px;
+  font-size: 14px;
+  display: flex;
+  .header-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left {
+      display: flex;
+      margin-right: auto;
+      padding: 0 1em 0 1em;
+      div {
+        margin-right: 1em;
+      }
+    }
+    .right {
+      padding: 0 1em;
+      display: flex;
+      margin-left: auto;
+      div {
+        margin-left: 1em;
+      }
+    }
+  }
+}
+
+.chat-wrapper {
+  margin-top: 3em;
+  .chat-wrap {
+    margin-bottom: 5em;
+    .chat-left {
+      border-bottom: 1px solid #969696;
+      display: flex;
+      margin-bottom: 0.5em;
+      .btDelete {
+        margin-left: auto;
+      }
+    }
+    .chat-right {
+      text-align: right;
+      border-bottom: 1px solid #969696;
+    }
+  }
+}

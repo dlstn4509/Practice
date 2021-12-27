@@ -1,0 +1,16 @@
+<header class="header-wrapper">
+	<div class="header-wrap wrapper">
+		<div class="left">
+			<div><a href="/chat/list/1">리스트으으으</a></div>
+			<div><a href="/chat/kakaomap">카카오지도</a></div>
+			<div><a href="/chat/navermap">네이버지도</a></div>
+			<% if(user) { %>
+				<div><a href="/chat/logout">로그아웃</a></div>
+				<div><a href="/chat/form">글작성</a></div>
+			<% } else { %> 
+				<div><a href="/chat/auth">회원가입</a></div>
+				<div><a href="/chat/login">로그인</a></div>
+			<% } %> 
+		</div>
+	</div>
+</header>
