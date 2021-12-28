@@ -1,52 +1,56 @@
 <%- include('../inc/head.ejs') %> 
 <%- include('../inc/header.ejs') %>
-<script src="/js/axios.min.js"></script>
-<div class="view-wrapper wrapper mt-5">
-  <div class="view-wrap">
-    <form action="/chat/view" method="POST" name="viewForm">
-      <input type="hidden" name="id" value="<%= list.id %>">
+<div class="form-wrapper wrapper mt-5">
+  <div class="form-wrap">
+    <form action="/chat/view" method="POST" name="formForm" enctype="multipart/form-data">
+      <input type="hidden" name="user_id" value="<%= user.id %>">
       <table class="table">
-        <tr>
-          <td>아이디</td>
-          <td><input type="text" value="<%= list.User.userid %>" readonly></td>
-        </tr>
-        <tr>
-          <td>작성자</td>
-          <td><input type="text" name="writer" value="<%= list.writer %>"></td>
-        </tr>
-        <tr>
-          <td>내용</td>
-          <td><input type="text" name="content" value="<%= list.content %>"></td>
-        </tr>
-        <tr>
-          <td>썸네일이미지</td>
-          <% if(list.LeftsFiles[0]) { %>
-            <td>
-              <img class="thumbImg" src="/uploads/thumb/<%= list.LeftsFiles[0].filename %>" alt="" width="300px" onClick="turn(this)" style="transform: rotate(0deg)">
-              <%= list.LeftsFiles[0].originalname %>
-              <button type="button" class="btn btn-success btn-tring">사진회전</button>
-              <button type="button" class="btn btn-danger btDelete">파일 삭제</button>
+        <tbody>
+          <tr>
+            <td>아이디</td>
+            <td><input type="text" value="dlstn4509" readonly></td>
+          </tr>
+          <tr>
+            <td>닉네임</td>
+            <td><input type="text" name="writer" value="<%= list.writer %>"></td>
+          </tr>
+          <tr>
+            <td>내용</td>
+            <td><input type="text" name="content" value="<%= list.content %>"></td>
+          </tr>
+          <td style="height: 500px;">
+            <td colspan="2" class="text-center" style="vertical-align: middle">
+              <img src="/uploads/thumb/<%= list.LeftsFiles[0].filename %>" id="blah" class="bigImg" style="max-width: 500px;">
             </td>
-          <% } else { %>
-            <td><input type="file" name="file" value="" required ></td>
-          <% } %>
-        </tr>
-        <tr>
-          <td>상세이미지</td>
-          <% if(list.LeftsFiles[1]) { %>
+          </tr>
+          <tr>
+            <td>미리보기</td>
             <td>
-              <img src="/uploads/<%= list.LeftsFiles[1].filename %>" alt="" width="300px">
-              <%= list.LeftsFiles[1].originalname %>
-              <button type="button" class="btn btn-danger btDelete">파일 삭제</button>
+              <img src="/uploads/thumb/<%= list.LeftsFiles[0].filename %>" id="thumb1" style="max-width: 50px;">
+              <img src="/uploads/thumb/<%= list.LeftsFiles[1].filename %>" id="thumb2" style="max-width: 50px;">
             </td>
-          <% } else { %>
-            <td><input type="file" name="file" value="" required ></td>
-          <% } %>
-        </tr>
+          </tr>
+          <tr>
+            <td>썸네일 이미지</td>
+            <td>
+              <input class="input" type="file" name="file1" required onchange="readURL(this, '#thumb1');"><%= list.LeftsFiles[0].originalname %>
+              <input type="hidden" id="rotate1" name="rotate1" value="0">
+              <button type="button" class="btn btn-primary btn-tring" onclick="imgTring('#thumb1', '#rotate1')">회전</button>
+            </td>
+          </tr>
+          <tr>
+            <td>상세이미지</td>
+            <td>
+              <input class="input" type="file" name="file2" required onchange="readURL(this, '#thumb2');"><%= list.LeftsFiles[1].originalname %>
+              <input type="hidden" id="rotate2" name="rotate2" value="0">
+              <button type="button" class="btn btn-primary btn-tring" onclick="imgTring('#thumb2', '#rotate2')">회전</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <div class="text-center">
-        <button class="btn btn-success">수정</button>
-        <button type="button" class="btn btn-danger" onclick="history.go(-1)">뒤로가기</button>
+        <button class="btn btn-primary" id="btSave">수정</button>
+        <button type="reset" class="btn btn-danger">초기화</button>
       </div>
     </form>
   </div>

@@ -13,15 +13,16 @@ router.get('/', (req, res) => {
 
 router.post(
   '/',
-  upload.fields([{ name: 'file' }, { name: 'file2' }]),
+  upload.fields([{ name: 'file1' }, { name: 'file2' }]),
   sharpInit(500, 500),
   async (req, res, next) => {
     try {
+      // res.json(req.files);
       let arr = [];
-      let { file, file2 } = req.files;
+      let { file1, file2 } = req.files;
       await Lefts.create(req.body);
       let { id } = await Lefts.findOne({ order: [['id', 'DESC']] });
-      arr.push(file[0], file2[0]);
+      arr.push(file1[0], file2[0]);
       for (let i = 0; i < arr.length; i++) {
         arr[i].thumbfilename = 'thumb-' + arr[i].filename;
         arr[i].lefts_id = id;
