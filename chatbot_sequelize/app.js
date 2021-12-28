@@ -18,7 +18,7 @@ require('./modules/server-init')(app, process.env.PORT);
 
 /*************** static init **************/
 app.use('/', express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static(path.join(__dirname, 'storages')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 /************** view engine ***************/
 app.set('view engine', 'ejs');

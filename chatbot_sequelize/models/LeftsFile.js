@@ -8,23 +8,27 @@ module.exports = (sequelize, DataType) => {
         autoIncrement: true,
         allowNull: false,
       },
-      oriName: {
+      originalname: {
         type: DataType.STRING(255),
         allowNull: false,
       },
-      saveName: {
+      filename: {
         type: DataType.STRING(255),
         allowNull: false,
       },
-      mimeType: {
+      thumbfilename: {
         type: DataType.STRING(255),
         allowNull: false,
       },
-      fileType: {
+      mimetype: {
+        type: DataType.STRING(255),
+        allowNull: false,
+      },
+      fieldname: {
         type: DataType.ENUM,
         allowNull: false,
-        values: ['I', 'F'],
-        defaultValue: 'F',
+        values: ['file', 'file2'],
+        defaultValue: 'file',
       },
       size: {
         type: DataType.INTEGER(10),

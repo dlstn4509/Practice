@@ -1,5 +1,6 @@
 <%- include('../inc/head.ejs') %> 
 <%- include('../inc/header.ejs') %>
+<script src="/js/axios.min.js"></script>
 <div class="view-wrapper wrapper mt-5">
   <div class="view-wrap">
     <form action="/chat/view" method="POST" name="viewForm">
@@ -16,6 +17,31 @@
         <tr>
           <td>내용</td>
           <td><input type="text" name="content" value="<%= list.content %>"></td>
+        </tr>
+        <tr>
+          <td>썸네일이미지</td>
+          <% if(list.LeftsFiles[0]) { %>
+            <td>
+              <img class="thumbImg" src="/uploads/thumb/<%= list.LeftsFiles[0].filename %>" alt="" width="300px" onClick="turn(this)" style="transform: rotate(0deg)">
+              <%= list.LeftsFiles[0].originalname %>
+              <button type="button" class="btn btn-success btn-tring">사진회전</button>
+              <button type="button" class="btn btn-danger btDelete">파일 삭제</button>
+            </td>
+          <% } else { %>
+            <td><input type="file" name="file" value="" required ></td>
+          <% } %>
+        </tr>
+        <tr>
+          <td>상세이미지</td>
+          <% if(list.LeftsFiles[1]) { %>
+            <td>
+              <img src="/uploads/<%= list.LeftsFiles[1].filename %>" alt="" width="300px">
+              <%= list.LeftsFiles[1].originalname %>
+              <button type="button" class="btn btn-danger btDelete">파일 삭제</button>
+            </td>
+          <% } else { %>
+            <td><input type="file" name="file" value="" required ></td>
+          <% } %>
         </tr>
       </table>
       <div class="text-center">

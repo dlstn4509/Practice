@@ -1,0 +1,15 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<script src="/js/axios.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=70352z21jq&submodules=geocoder"></script>
+<div class="navermap-wrapper wrapper mt-5">
+  <div class="navermap-wrap">
+    <table class="table">
+      <input type="text" name="address" id="address" placeholder="주소입력" value="서울 강남구 학동로30길 34">
+      <button id="submit" class="btn btn-primary ml-5">조회</button>
+    </table>
+    <div id="map" style="width:1000px;height:600px;"></div>
+  </div>
+</div>
+<%- include('../inc/foot.ejs') %> 

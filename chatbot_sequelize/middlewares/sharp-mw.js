@@ -11,6 +11,7 @@ module.exports = (x, y) => {
       req.files.thumb = await sharp(req.files.file[0].path)
         .resize(x, y)
         .jpeg({ mozjpeg: true })
+        .rotate(Number(req.body.rotate))
         .composite([
           {
             input: './별.png',
@@ -18,6 +19,7 @@ module.exports = (x, y) => {
           },
         ])
         .toFile(path.join(loc, req.files.file[0].filename));
+      // res.json(req.body);
       next();
     } catch (err) {
       next(err);

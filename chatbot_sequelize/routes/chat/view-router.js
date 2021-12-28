@@ -3,16 +3,19 @@ const express = require('express');
 const router = express.Router();
 const createError = require('http-errors');
 const { pool } = require('../../modules/mysql-init');
-const { Lefts, User } = require('../../models');
+const sharp = require('sharp');
+const { Lefts, User, LeftsFile } = require('../../models');
 
 router.get('/:id', async (req, res, next) => {
   try {
     req.app.locals.css = 'main';
+    req.app.locals.js = 'view';
     const [list] = await Lefts.findAll({
       where: { id: req.params.id },
-      include: [{ model: User }],
+      include: [{ model: User }, { model: LeftsFile }],
     });
-    res.render('chat/view', { list });
+    res.render('chat/view', { list, sharp });
+    // res.json(list);
   } catch (err) {
     next(createError(err));
   }

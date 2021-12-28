@@ -19,12 +19,20 @@
             <td><input type="text" name="content"></td>
           </tr>
           <tr>
-            <td>첨부파일</td>
-            <td><input type="file" name="file" required></td>
+            <td>썸네일 이미지</td>
+            <td>
+              <img src="" id="blah" style="width: 500px;" class="img1">
+              <input class="input" type="file" name="file" required onchange="readURL(this);">
+              <input type="hidden" name="rotate" value="">
+              <button type="button" class="btn btn-primary btn-tring">회전</button>
+            </td>
           </tr>
           <tr>
-            <td>첨부파일2</td>
-            <td><input type="file" name="file2" required></td>
+            <td>상세이미지</td>
+            <td>
+              <img src="" id="blah2" style="width: 500px;">
+              <input class="input" type="file" name="file2" required onchange="readURL2(this);">
+            </td>
           </tr>
         </tbody>
       </table>
