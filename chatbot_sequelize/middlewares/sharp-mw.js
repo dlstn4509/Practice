@@ -10,7 +10,6 @@ module.exports = (x, y) => {
       let arr = [];
       req.files.file1[0].rotate = req.body.rotate1;
       req.files.file2[0].rotate = req.body.rotate2;
-      console.log(req.files);
       let { file1, file2 } = req.files;
       arr.push(file1[0], file2[0]);
 

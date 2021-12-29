@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const createError = require('http-errors');
+const uploadS3 = require('../../middlewares/multerS3-mw');
 const upload = require('../../middlewares/multer-mw');
 const sharpInit = require('../../middlewares/sharp-mw');
 const { Lefts, LeftsFile } = require('../../models');
+const removeFile = require('../../middlewares/removeFile-mw');
 
 router.get('/', (req, res) => {
   req.app.locals.css = 'main';
@@ -13,11 +15,12 @@ router.get('/', (req, res) => {
 
 router.post(
   '/',
+  // uploadS3.fields([{ name: 'file1' }, { name: 'file2' }]),
+  // removeFile,
   upload.fields([{ name: 'file1' }, { name: 'file2' }]),
   sharpInit(500, 500),
   async (req, res, next) => {
     try {
-      // res.json(req.files);
       let arr = [];
       let { file1, file2 } = req.files;
       await Lefts.create(req.body);
@@ -28,7 +31,7 @@ router.post(
         arr[i].lefts_id = id;
       }
       await LeftsFile.bulkCreate(arr);
-      // res.json(arr);
+      // res.json(req.files);
       res.redirect('/chat/list/1');
     } catch (err) {
       next(err);

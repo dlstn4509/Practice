@@ -30,7 +30,6 @@ function searchBusiness() {
   axios(config)
     .then(function (r) {
       let data = r.data.data;
-      console.log(data);
       let html = '';
       for (let i = 0; i < r.data.data.length; i++) {
         html += `<tr>
@@ -86,3 +85,17 @@ function searchBusiness2() {
       console.log(err);
     });
 }
+
+/*******************************************************/
+axios({
+  method: 'post',
+  url: 'https://api.odcloud.kr/api/nts-businessman/v1/status?serviceKey=SaqPNX%2Fub%2FFdA3w2TFEoYdecDbMxS0Ex%2B2JhBJhJcD6tJYd13CFIMtwvtiwIwpCMoTiEyULLsp1QEs286MoGsA%3D%3D',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  data: {
+    b_no: ['1148671093'],
+  },
+}).then(function (r) {
+  console.log(r);
+});
