@@ -11,7 +11,7 @@ fs.readdirSync(__dirname)
   });
 
 router.get('/', (req, res, next) => {
-  res.redirect('/chat/list');
+  res.redirect('/chat/list/1');
 });
 
 module.exports = router;
