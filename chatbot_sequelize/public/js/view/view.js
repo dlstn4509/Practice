@@ -27,5 +27,4 @@ function imgTring(thumb, rotate) {
   );
   let rotateVal = document.querySelector(rotate);
   rotateVal.value = turnAngle;
-  console.log(rotate);
 }
