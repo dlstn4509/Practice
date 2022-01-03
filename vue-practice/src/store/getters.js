@@ -6,4 +6,7 @@ export default {
   GET_SEQUELIZE: function (state) {
     return state.sequelize;
   },
+  GET_KAKAOMAP: function (state) {
+    return state.kakaoMap;
+  },
 };

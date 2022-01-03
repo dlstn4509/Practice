@@ -6,4 +6,7 @@ export default {
   MUT_SEQUELIZE(state, v) {
     state.sequelize = v;
   },
+  MUT_KAKAOMAP(state, v) {
+    state.kakaoMap = v;
+  },
 };
