@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Search from '../views/Search.vue';
 import Canvas from '../views/Canvas.vue';
 import Sequelize from '../views/Sequelize.vue';
+import KakaoMap from '../views/KakaoMap.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/sequelize',
     name: 'Sequelize',
     component: Sequelize,
+  },
+  {
+    path: '/kakaomap',
+    name: 'KakaoMap',
+    component: KakaoMap,
   },
 ];
 
