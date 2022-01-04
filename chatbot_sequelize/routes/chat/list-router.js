@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const createError = require('http-errors');
 const { pool } = require('../../modules/mysql-init');
-const { Lefts, User } = require('../../models');
+const { Lefts, User, LeftsFile } = require('../../models');
 const createPager = require('../../modules/pager-init');
 
 router.get('/:page', async (req, res, next) => {
@@ -18,7 +18,7 @@ router.get('/:page', async (req, res, next) => {
       offsetCnt = (req.params.page - 1) * 5;
     }
     const lists = await Lefts.findAll({
-      include: [{ model: User }],
+      include: [{ model: User }, { model: LeftsFile }],
       limit: 5,
       offset: offsetCnt,
       order: [['id', 'DESC']],

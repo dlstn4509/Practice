@@ -3,13 +3,14 @@
 <script src="/js/promise.polyfill.min.js"></script> 
 <script src="/js/axios.min.js"></script> 
 <div class="chat-wrapper wrapper">
-  <table class="table">
+  <table class="table chat-table">
     <thead>
       <tr>
         <td>글번호</td>
         <td>아이디</td>
         <td>닉네임</td>
-        <td colspan="2">내용</td>
+        <td>내용</td>
+        <td colspan="2">첨부파일</td>
       </tr>
     </thead>
     <tbody>
@@ -18,7 +19,17 @@
           <td><%= list.id %></td>
           <td><%= list.User.userid %></td>
           <td><%= list.writer %></td>
-          <td class="content" data-id="<%= list.id %>" style="cursor: pointer;"><%= list.content %></td>
+          <td class="content" data-id="<%= list.id %>">
+            <span style="cursor: pointer;"><%= list.content %></span>
+          </td>
+          <% if(list.LeftsFiles && list.LeftsFiles.length) { %> 
+            <td class="tddd">
+              <img src="/uploads/thumb/<%= list.LeftsFiles[0].filename %>" style="cursor: pointer;" class="thumb">
+              <img src="/uploads/<%= list.LeftsFiles[0].filename %>" style="display: none;" class="thumb2">
+            </td>
+          <% } else { %> 
+            <td></td>
+          <% } %> 
           <% if(user && user.userid === list.User.userid) { %>
             <td>
               <button class="btn btn-danger btDelete" data-id="<%= list.id %>">삭제</button>

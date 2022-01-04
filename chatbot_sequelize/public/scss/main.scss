@@ -31,19 +31,16 @@
 
 .chat-wrapper {
   margin-top: 3em;
-  .chat-wrap {
-    margin-bottom: 5em;
+  .chat-table {
     .chat-left {
-      border-bottom: 1px solid #969696;
-      display: flex;
-      margin-bottom: 0.5em;
-      .btDelete {
-        margin-left: auto;
+      .tddd {
+        .thumb {
+          width: 100px;
+        }
+        .thumb2 {
+          position: absolute;
+        }
       }
-    }
-    .chat-right {
-      text-align: right;
-      border-bottom: 1px solid #969696;
     }
   }
 }
