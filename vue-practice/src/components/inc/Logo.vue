@@ -7,6 +7,8 @@
     <router-link to="/sequelize">외부 api 가져오기</router-link>
     <span> /</span>
     <router-link to="/kakaomap">카카오 지도</router-link>
+    <span> /</span>
+    <router-link to="/gongsil">공실</router-link>
   </h1>
 </template>
 

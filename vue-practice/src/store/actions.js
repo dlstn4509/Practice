@@ -1,6 +1,7 @@
 import searchApi from '../api/search-api';
 import sequelizeApi from '../api/sequelize-api';
 import kakaoMapApi from '../api/kakaoMap-api';
+import gongsilApi from '../api/gongsil-api';
 
 const ACT_SEARCH = async ({ commit }, { searchInput, searchSelect }) => {
   const { data } = await searchApi(searchInput, searchSelect);
@@ -17,4 +18,9 @@ const ACT_KAKAOMAP = async ({ commit }, kakaoMapTxt) => {
   commit('MUT_KAKAOMAP', data.documents);
 };
 
-export default { ACT_SEARCH, ACT_SEQUELIZE, ACT_KAKAOMAP };
+const ACT_GONGSIL = async ({ commit }) => {
+  const { data } = await gongsilApi();
+  commit('MUT_GONGSIL', data);
+};
+
+export default { ACT_SEARCH, ACT_SEQUELIZE, ACT_KAKAOMAP, ACT_GONGSIL };

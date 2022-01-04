@@ -5,6 +5,7 @@ import Search from '../views/Search.vue';
 import Canvas from '../views/Canvas.vue';
 import Sequelize from '../views/Sequelize.vue';
 import KakaoMap from '../views/KakaoMap.vue';
+import Gongsil from '../views/Gongsil.vue';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/kakaomap',
     name: 'KakaoMap',
     component: KakaoMap,
+  },
+  {
+    path: '/gongsil',
+    name: 'Gongsil',
+    component: Gongsil,
   },
 ];
 

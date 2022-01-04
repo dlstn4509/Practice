@@ -3,4 +3,5 @@ export default {
   search: [],
   sequelize: [],
   kakaoMap: [],
+  gongsil: [],
 };

@@ -40,7 +40,6 @@ export default {
     mapSearch() {
       let kakaoMapTxt = document.querySelector('.kakaoMapTxt').value;
       this.$store.dispatch('ACT_KAKAOMAP', kakaoMapTxt);
-
       geocoder.addressSearch(kakaoMapTxt, function (result, status) {
         if (status === kakao.maps.services.Status.OK) {
           let coords = new kakao.maps.LatLng(result[0].y, result[0].x);

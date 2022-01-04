@@ -9,4 +9,7 @@ export default {
   MUT_KAKAOMAP(state, v) {
     state.kakaoMap = v;
   },
+  MUT_GONGSIL(state, v) {
+    state.gongsil = v;
+  },
 };

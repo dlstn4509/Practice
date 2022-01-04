@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 const passport = require('passport');
 const passportModule = require('./passport');
+const cors = require('cors');
 const { sequelize } = require('./models');
 const method = require('./middlewares/method-mw');
 const locals = require('./middlewares/locals-mw');
@@ -30,6 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(method());
 app.use(session(app));
+app.use(cors());
 
 /**************** passport ****************/ // 패스포트 세팅 무조건 넣음
 passportModule(passport);

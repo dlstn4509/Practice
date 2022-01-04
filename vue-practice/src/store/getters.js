@@ -9,4 +9,7 @@ export default {
   GET_KAKAOMAP: function (state) {
     return state.kakaoMap;
   },
+  GET_GONGSIL: function (state) {
+    return state.gongsil;
+  },
 };
