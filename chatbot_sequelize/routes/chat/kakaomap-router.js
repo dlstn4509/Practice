@@ -15,5 +15,3 @@ router.post('/', (req, res, next) => {
 });
 
 module.exports = { name: '/kakaomap', router };
-
-// 7CDFB3A4-E9BF-3219-8431-33A57D5A1BF0
