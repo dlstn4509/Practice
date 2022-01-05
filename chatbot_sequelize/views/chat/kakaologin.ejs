@@ -1,0 +1,31 @@
+<%- include('../inc/head.ejs') %> 
+<%- include('../inc/header.ejs') %>
+<script src="/js/axios.min.js"></script>
+<div class="kakao-wrapper wrapper">
+  <div class="kakao-wrap mt-5">
+    <button class="btn btn-primary mb-2 kakaoBtn">로그인</button>
+    <div class="mb-5">코드 값 : <%= code %></div>
+    <button class="btn btn-success btnToken mb-2">토큰 불러오기</button>
+    <div class="token mb-5"></div>
+    <form action="/chat/kakaologin/cb" method="POST">
+      <input name="input" type="hidden" value="">
+      <table>
+        <tr>
+          <td>
+            <button class="btn btn-warning btnSubmit">전송</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <form action="/chat/kakaologin/logout" method="post" class="mt-5">
+      <input name="input2" type="hidden" value="">
+      <button class="btn btn-danger btLogout">로그아웃</button>
+    </form>
+  </div>
+</div>
+<script>
+  var codes = {
+		code			: "<%= code %>"
+	};
+</script>
+<%- include('../inc/foot.ejs') %> 
