@@ -27,8 +27,8 @@ module.exports = (sequelize, DataType) => {
       fieldname: {
         type: DataType.ENUM,
         allowNull: false,
-        values: ['file', 'file2'],
-        defaultValue: 'file',
+        values: ['file1', 'file2'],
+        defaultValue: 'file1',
       },
       size: {
         type: DataType.INTEGER(10),
