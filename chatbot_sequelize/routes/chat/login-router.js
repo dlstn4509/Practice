@@ -8,7 +8,16 @@ const { User } = require('../../models');
 
 router.get('/', (req, res, next) => {
   req.app.locals.css = 'main';
+  res.cookie('id', 'dlstn3333');
   res.render('chat/login');
+});
+
+router.get('/coco', (req, res, next) => {
+  if (req.cookies.id === 'dlstn3333') {
+    console.log('aaaaaaaaaaaaa');
+  }
+  console.log(req.cookies);
+  res.send(req.cookies);
 });
 
 router.post('/', async (req, res, next) => {
