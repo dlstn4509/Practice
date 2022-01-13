@@ -1,0 +1,15 @@
+<script>
+  function solution(s) {
+    var answer = '';
+    let arr1 = s.split(' ');
+    for (let i = 0; i < arr1.length; i++) {
+      if (isNaN(arr1[i][0])) {
+        arr1[i].replace(arr1[i][0], arr1[i][0].toUpperCase());
+        console.log(arr1[i][0]);
+      }
+    }
+    return answer;
+  }
+  console.log(solution('3people unFollowed me')); // "3people Unfollowed Me"
+  // console.log(solution('for the last week')); // "For The Last Week"
+</script>

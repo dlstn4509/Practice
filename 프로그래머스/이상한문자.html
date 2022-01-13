@@ -1,19 +1,19 @@
 <script>
   function solution(s) {
     var answer = '';
-    let arr = String(s).split('');
-    let newArr = [];
-    console.log(arr);
-    for (let i = 0; i < s.length; i++) {
-      if (i % 2 === 0) {
-        newArr.push(s[i].toUpperCase());
+    let arr = s.split(' ');
+    let arr3 = [];
+    for (let i = 0; i < arr.length; i++) {
+      let arr2 = arr[i].split('');
+      for (let j = 0; j < arr2.length; j++) {
+        if (j % 2 === 0) {
+          arr2[j] = arr2[j].toUpperCase();
+          console.log(arr2[j]);
+        }
       }
-      if (i % 2 !== 1) {
-        newArr.push(s[i].toLowerCase());
-      }
+      arr3.push(arr2.join().replace(/,/g, ''));
     }
-    answer = newArr.join();
-    return answer;
+    return (answer = arr3.join().replace(/,/g, ' '));
   }
 
   console.log(solution('try hello world'));

@@ -1,0 +1,41 @@
+<script>
+  function solution(answers) {
+    let answer = [];
+    let no1 = '';
+    let no2 = '';
+    let no3 = '';
+    let no1arr = [1, 2, 3, 4, 5];
+    let no2arr = [2, 1, 2, 3, 2, 4, 2, 5];
+    let no3arr = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+
+    for (let i = 0; i < answers.length; i++) {
+      if (answers[i] === no1arr[i]) {
+        no1++;
+      }
+      if (answers[i] === no2arr[i]) {
+        no2++;
+      }
+      if (answers[i] === no3arr[i]) {
+        no3++;
+      }
+    }
+
+    if (no1 > no2 && no1 > no3) {
+      answer.unshift(1);
+    }
+    if (no2 > no1 && no2 > no3) {
+      answer.unshift(2);
+    }
+    if (no3 > no1 && no3 > no2) {
+      answer.unshift(3);
+    }
+
+    console.log('no1  ' + no1);
+    console.log('no2  ' + no2);
+    console.log('no3  ' + no3);
+
+    return answer;
+  }
+  // console.log(solution([1, 2, 3, 4, 5]));
+  console.log(solution([2, 2, 1, 4, 5]));
+</script>

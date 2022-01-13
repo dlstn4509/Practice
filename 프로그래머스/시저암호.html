@@ -1,0 +1,83 @@
+<script>
+  let lower = [
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+  ];
+  let upper = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
+  ];
+  function solution(s, n) {
+    let answer = '';
+    let arr = s.split('');
+    let idx = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (upper.indexOf(arr[i]) !== -1) {
+        if (upper.indexOf(arr[i]) + n > 25) {
+          idx.push(upper[((upper.indexOf(arr[i]) + n) % 25) - 1]);
+        } else {
+          idx.push(upper[upper.indexOf(arr[i]) + n]);
+        }
+      } else if (lower.indexOf(arr[i]) !== -1) {
+        if (lower.indexOf(arr[i]) + n > 25) {
+          idx.push(lower[((lower.indexOf(arr[i]) + n) % 25) - 1]);
+        } else {
+          idx.push(lower[lower.indexOf(arr[i]) + n]);
+        }
+      }
+    }
+    return (answer = [idx.toString().replace(/,/g, '')]);
+  }
+  console.log(solution('AB', 1));
+  // console.log(solution('y', 1));
+  // console.log(solution('z', 4));
+  // console.log(solution('a B z', 4));
+</script>

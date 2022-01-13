@@ -1,0 +1,16 @@
+<script>
+  function solution(s) {
+    var answer = '';
+    let num = [];
+    let arr = s
+      .split(' ')
+      .map((v) => Number(v))
+      .sort((a, b) => a - b);
+    num.push(arr[0], arr[arr.length - 1]);
+    return (answer = num.join().replace(',', ' '));
+  }
+  console.log(solution('1 2 3 4')); // "1 4"
+  console.log(solution('-1 -2 -3 -4')); // "-4 -1"
+  console.log(solution('-4 -3 -2 -1')); // "-4 -1"
+  console.log(solution('-1 -1')); // "-1 -1"
+</script>
